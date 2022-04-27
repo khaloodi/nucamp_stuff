@@ -10,4 +10,4 @@ const saySomethingAndReact = (msg = 'you forgot to submit a message') => {
 };
 
 // add the inputs here
-saySomethingAndReact(message);
+saySomethingAndReact(message)(smoothReaction);
