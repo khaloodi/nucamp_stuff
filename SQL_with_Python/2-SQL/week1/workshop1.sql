@@ -42,7 +42,24 @@ CREATE TABLE categories (
 );
 
 -- TODO create more tables here...
+CREATE TABLE suppliers(
+    id SERIAL,
+    name TEXT NOT NULL,
+    PRIMARY KEY (id)
+);
 
+CREATE TABLE customers(
+    id SERIAL,
+    company_name TEXT NOT NULL,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE employees(
+    id SERIAL,
+    first_name TEXT NOT NULL,
+    last_name TEXT NOT NULL,
+    PRIMARY KEY (id)
+);
 
 ---
 --- Add foreign key constraints
@@ -53,7 +70,7 @@ CREATE TABLE categories (
 ALTER TABLE products
 ADD CONSTRAINT fk_products_categories 
 FOREIGN KEY (category_id) 
-REFERENCES categories (id);
+REFERENCES categories;
 
 
 -- TODO create more constraints here...
