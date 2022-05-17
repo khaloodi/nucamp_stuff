@@ -61,6 +61,27 @@ CREATE TABLE employees(
     PRIMARY KEY (id)
 );
 
+CREATE TABLE orders(
+    id SERIAL,
+    date DATE,
+    customer_id INT NOT NULL,
+    employeed_id INT,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE orders_products(
+    product_id INT,
+    order_id INT,
+    quantity INT NOT NULL,
+    discount NUMERIC NOT NULL,
+    PRIMARY KEY (product_id, order_id)
+);
+
+CREATE TABLE territories(
+    id SERIAL,
+    description TEXT NOT NULL,
+    PRIMARY KEY (id)
+);
 ---
 --- Add foreign key constraints
 ---
